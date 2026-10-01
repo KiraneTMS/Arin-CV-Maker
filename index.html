@@ -116,6 +116,11 @@
               <legend>Personal</legend>
               <label>Full Name <input type="text" name="fullName" required placeholder="Jane Doe" /></label>
               <label>Job Title <input type="text" name="jobTitle" placeholder="Product Designer" /></label>
+              <label id="photo-field">Photo <small style="opacity:.7">(optional – Designed / ATS)</small>
+                <input type="url" name="photoUrl" placeholder="https://… image URL" />
+                <input type="file" name="photoFile" accept="image/*" id="photo-file" style="margin-top:0.35rem" />
+              </label>
+              <input type="hidden" name="photoData" id="photo-data" value="" />
               <label>Email <input type="email" name="email" required placeholder="jane@example.com" /></label>
               <label>Phone <input type="tel" name="phone" placeholder="+1 234 567 890" /></label>
               <label>Location <input type="text" name="location" placeholder="Jakarta, Indonesia" /></label>
@@ -245,6 +250,9 @@
       <label>Project name <input type="text" name="projName" placeholder="My Awesome App" /></label>
       <label>Tagline / role <input type="text" name="projRole" placeholder="Full-stack · 2024" /></label>
       <label>Link <input type="url" name="projUrl" placeholder="https://..." /></label>
+      <label>Image URL <input type="url" name="projImage" placeholder="https://… project image" /></label>
+      <label>Or upload image <input type="file" name="projImageFile" accept="image/*" /></label>
+      <input type="hidden" name="projImageData" value="" />
       <label>Tech (comma separated) <input type="text" name="projTech" placeholder="React, Node, Firebase" /></label>
       <label>Description <textarea name="projDesc" rows="3" placeholder="What you built and impact..."></textarea></label>
       <button type="button" class="remove-btn outline secondary">Remove</button>

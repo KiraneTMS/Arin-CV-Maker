@@ -14,9 +14,10 @@
     },
     css: 'themes/ats-compact/style.css',
     render(d) {
-      const { escapeHtml, nl2br, buildContactLine, buildSkills, buildLangs, buildExperience, buildEducation } = H();
+      const { escapeHtml, nl2br, buildContactLine, buildSkills, buildLangs, buildExperience, buildEducation , buildPhoto } = H();
       return `
         <div class="cv-header">
+          ${d.photo ? `<div class="cv-photo-wrap">${buildPhoto(d, "cv-photo")}</div>` : ''}
           <h1>${escapeHtml(d.fullName) || 'Your Name'}</h1>
           <div class="title">${escapeHtml(d.jobTitle)}</div>
           <div class="contact">${buildContactLine(d)}</div>

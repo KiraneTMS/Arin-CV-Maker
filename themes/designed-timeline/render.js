@@ -15,7 +15,7 @@
     },
     css: 'themes/designed-timeline/style.css',
     render(d) {
-      const { escapeHtml, nl2br, formatMonth, buildContactLine, buildSkills, buildLangs } = H();
+      const { escapeHtml, buildPhoto, nl2br, formatMonth, buildContactLine, buildSkills, buildLangs } = H();
       const exp = (d.experience || []).map(e => {
         const period = `${formatMonth(e.start)}${e.end ? ' – ' + formatMonth(e.end) : (e.start ? ' – Present' : '')}`;
         return `<div class="dt-item"><h3>${escapeHtml(e.title) || 'Position'}</h3>

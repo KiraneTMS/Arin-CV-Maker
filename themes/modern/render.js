@@ -19,7 +19,7 @@
     },
     css: 'themes/modern/style.css',
     render(d) {
-      const { escapeHtml, nl2br, buildSkills, buildLangs, buildExperience, buildEducation } = H();
+      const { escapeHtml, nl2br, buildSkills, buildLangs, buildExperience, buildEducation, buildPhoto } = H();
       const skills = buildSkills(d);
       const langs = buildLangs(d);
       const exp = buildExperience(d);
@@ -34,6 +34,7 @@
       return `
         <div class="layout-modern">
           <aside class="sidebar">
+            ${buildPhoto(d, "cv-photo sidebar")}
             <h1>${escapeHtml(d.fullName) || 'Your Name'}</h1>
             <div class="title">${escapeHtml(d.jobTitle)}</div>
             ${contactItems.length ? `<h2>Contact</h2>${contactItems.join('')}` : ''}

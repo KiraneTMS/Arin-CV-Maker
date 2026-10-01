@@ -19,7 +19,7 @@
     },
     css: 'themes/minimal/style.css',
     render(d) {
-      const { escapeHtml, nl2br, buildContactLine, buildSkills, buildLangs, buildExperience, buildEducation } = H();
+      const { escapeHtml, nl2br, buildContactLine, buildSkills, buildLangs, buildExperience, buildEducation , buildPhoto } = H();
       const contact = buildContactLine(d);
       const skills = buildSkills(d);
       const langs = buildLangs(d);
@@ -27,6 +27,7 @@
       const edu = buildEducation(d, 'minimal');
       return `
         <div class="cv-header">
+          ${d.photo ? `<div class="cv-photo-wrap">${buildPhoto(d, "cv-photo")}</div>` : ''}
           <h1>${escapeHtml(d.fullName) || 'Your Name'}</h1>
           <div class="title">${escapeHtml(d.jobTitle)}</div>
           <div class="contact">${contact}</div>

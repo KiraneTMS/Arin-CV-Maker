@@ -46,27 +46,286 @@
 .cv-paper a { color: var(--accent); text-decoration: none; }
 .cv-paper a:hover { text-decoration: underline; }
 
+/* =========================================================
+   ATS readability – force high-contrast print-safe text
+   ========================================================= */
+.cv-paper.ats {
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.cv-paper.ats h1,
+.cv-paper.ats h2,
+.cv-paper.ats h3,
+.cv-paper.ats .cv-header h1,
+.cv-paper.ats .title,
+.cv-paper.ats .cv-item h3,
+.cv-paper.ats p,
+.cv-paper.ats .meta,
+.cv-paper.ats .contact,
+.cv-paper.ats .cv-body,
+.cv-paper.ats .cv-section {
+  color: #111111 !important;
+}
+
+.cv-paper.ats .cv-header .title,
+.cv-paper.ats .meta,
+.cv-paper.ats .contact {
+  color: #333333 !important;
+}
+
+.cv-paper.ats a {
+  color: #111111 !important;
+  text-decoration: underline;
+}
+
+.cv-paper.ats .cv-section h2 {
+  color: #111111 !important;
+  border-color: #111111 !important;
+}
+
+.cv-paper.ats .skill-tag,
+.cv-paper.ats .lang-tag {
+  background: #f3f4f6 !important;
+  color: #111111 !important;
+}
+
+/* Banded header may use dark band – keep name white ONLY inside dark header */
+.cv-paper.ats.theme-ats-banded .cv-header {
+  background: #1e3a5f !important;
+  color: #ffffff !important;
+}
+.cv-paper.ats.theme-ats-banded .cv-header h1,
+.cv-paper.ats.theme-ats-banded .cv-header .title,
+.cv-paper.ats.theme-ats-banded .cv-header .contact,
+.cv-paper.ats.theme-ats-banded .cv-header a {
+  color: #ffffff !important;
+}
+.cv-paper.ats.theme-ats-banded .cv-body,
+.cv-paper.ats.theme-ats-banded .cv-body h2,
+.cv-paper.ats.theme-ats-banded .cv-body h3,
+.cv-paper.ats.theme-ats-banded .cv-body p,
+.cv-paper.ats.theme-ats-banded .cv-body .meta {
+  color: #111111 !important;
+}
 
 /* =========================================================
-   ATS force overrides (always single-column + high parse)
+   Dense spacing – ATS & Designed (fit more on one page)
    ========================================================= */
-.cv-paper.ats .layout-modern,
-.cv-paper.ats .layout-creative {
-  display: block !important;
+.cv-paper.ats,
+.cv-paper.designed {
+  line-height: 1.35 !important;
+  font-size: 0.9rem !important;
 }
 
-.cv-paper.ats .sidebar,
-.cv-paper.ats .accent-bar {
-  display: none !important;
+.cv-paper.ats p,
+.cv-paper.designed p {
+  margin: 0 0 0.25rem !important;
+  line-height: 1.35 !important;
 }
 
-.cv-paper.ats .main,
-.cv-paper.ats .content {
-  padding: 0 !important;
+.cv-paper.ats .cv-section,
+.cv-paper.designed .cv-section,
+.cv-paper.ats .db-section,
+.cv-paper.designed .db-section,
+.cv-paper.ats .dt-section,
+.cv-paper.designed .dt-section,
+.cv-paper.ats .df-section,
+.cv-paper.designed .df-section {
+  margin-top: 0.55rem !important;
+  margin-bottom: 0 !important;
 }
 
-.cv-paper.ats {
-  /* Force classic-like readable structure even if theme is fancy */
-  font-family: system-ui, -apple-system, sans-serif !important;
+.cv-paper.ats .cv-section h2,
+.cv-paper.designed .cv-section h2,
+.cv-paper.ats .db-section h2,
+.cv-paper.designed .db-section h2,
+.cv-paper.ats .dt-section h2,
+.cv-paper.designed .dt-section h2,
+.cv-paper.ats .df-section h2,
+.cv-paper.designed .df-section h2 {
+  margin: 0 0 0.3rem !important;
+  padding-bottom: 0.15rem !important;
+  font-size: 0.78rem !important;
+  line-height: 1.2 !important;
 }
 
+.cv-paper.ats .cv-item,
+.cv-paper.designed .cv-item,
+.cv-paper.ats .db-item,
+.cv-paper.designed .db-item,
+.cv-paper.ats .dt-item,
+.cv-paper.designed .dt-item,
+.cv-paper.ats .df-item,
+.cv-paper.designed .df-item {
+  margin-bottom: 0.4rem !important;
+  padding-bottom: 0 !important;
+}
+
+.cv-paper.ats .cv-item h3,
+.cv-paper.designed .cv-item h3,
+.cv-paper.ats .db-item h3,
+.cv-paper.designed .db-item h3,
+.cv-paper.ats .dt-item h3,
+.cv-paper.designed .dt-item h3,
+.cv-paper.ats .df-item h3,
+.cv-paper.designed .df-item h3 {
+  margin: 0 !important;
+  line-height: 1.25 !important;
+  font-size: 0.92rem !important;
+}
+
+.cv-paper.ats .cv-item .meta,
+.cv-paper.designed .cv-item .meta,
+.cv-paper.ats .db-item .meta,
+.cv-paper.designed .db-item .meta,
+.cv-paper.ats .dt-item .meta,
+.cv-paper.designed .dt-item .meta {
+  margin: 0.05rem 0 0.15rem !important;
+  line-height: 1.25 !important;
+  font-size: 0.8rem !important;
+}
+
+.cv-paper.ats .cv-header,
+.cv-paper.designed .cv-header,
+.cv-paper.ats .db-header,
+.cv-paper.designed .db-header,
+.cv-paper.ats .dt-header,
+.cv-paper.designed .dt-header,
+.cv-paper.ats .df-header,
+.cv-paper.designed .df-header {
+  padding: 0.85rem 1.15rem 0.55rem !important;
+}
+
+.cv-paper.ats .cv-header h1,
+.cv-paper.designed .cv-header h1,
+.cv-paper.ats .db-header h1,
+.cv-paper.designed .db-header h1,
+.cv-paper.ats .dt-header h1,
+.cv-paper.designed .dt-header h1,
+.cv-paper.ats .df-header h1,
+.cv-paper.designed .df-header h1 {
+  margin: 0 0 0.1rem !important;
+  line-height: 1.15 !important;
+  font-size: 1.35rem !important;
+}
+
+.cv-paper.ats .cv-header .title,
+.cv-paper.designed .cv-header .title {
+  margin: 0 0 0.25rem !important;
+  line-height: 1.25 !important;
+  font-size: 0.9rem !important;
+}
+
+.cv-paper.ats .cv-header .contact,
+.cv-paper.designed .cv-header .contact {
+  margin: 0 !important;
+  line-height: 1.3 !important;
+  font-size: 0.8rem !important;
+  gap: 0.15rem 0.65rem !important;
+}
+
+.cv-paper.ats .cv-body,
+.cv-paper.designed .cv-body,
+.cv-paper.ats .db-content,
+.cv-paper.designed .db-content,
+.cv-paper.ats .dt-body,
+.cv-paper.designed .dt-body {
+  padding: 0.45rem 1.15rem 0.9rem !important;
+}
+
+.cv-paper.ats .skills-list,
+.cv-paper.designed .skills-list,
+.cv-paper.ats .lang-list,
+.cv-paper.designed .lang-list {
+  gap: 0.25rem !important;
+  margin: 0 !important;
+}
+
+.cv-paper.ats .skill-tag,
+.cv-paper.designed .skill-tag,
+.cv-paper.ats .lang-tag,
+.cv-paper.designed .lang-tag {
+  padding: 0.1rem 0.4rem !important;
+  font-size: 0.75rem !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+}
+
+/* Sidebar layouts denser */
+.cv-paper.designed .layout-modern,
+.cv-paper.designed .layout-creative {
+  min-height: auto !important;
+}
+.cv-paper.designed .sidebar {
+  padding: 1rem 0.85rem !important;
+}
+.cv-paper.designed .main,
+.cv-paper.designed .content {
+  padding: 1rem 1.1rem !important;
+}
+
+/* Timeline denser */
+.cv-paper.designed .dt-line {
+  padding-left: 1rem !important;
+  margin-left: 0.3rem !important;
+}
+.cv-paper.designed .dt-item {
+  margin-bottom: 0.55rem !important;
+  padding-bottom: 0 !important;
+}
+.cv-paper.designed .dt-item::before {
+  top: 0.2rem !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+
+/* Frame denser */
+.cv-paper.designed .df-frame {
+  margin: 0.5rem !important;
+  padding: 1rem 1.15rem 1.15rem !important;
+}
+.cv-paper.designed .df-header {
+  margin-bottom: 0.65rem !important;
+  padding-bottom: 0.55rem !important;
+}
+
+/* Bold accent bar denser */
+.cv-paper.designed .db-content {
+  padding: 1rem 1.15rem 1.15rem 1rem !important;
+}
+.cv-paper.designed .db-item {
+  margin-bottom: 0.45rem !important;
+  padding-left: 0.55rem !important;
+}
+
+/* Optional profile photo layout for ATS / Designed */
+.cv-photo-wrap {
+  float: right;
+  margin: 0 0 0.5rem 0.75rem;
+}
+.cv-paper.ats .cv-photo-wrap,
+.cv-paper.designed .cv-photo-wrap {
+  float: right;
+}
+.cv-paper.ats .cv-header,
+.cv-paper.designed .cv-header {
+  overflow: auto;
+}
+.cv-paper .cv-photo {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+.layout-modern .cv-photo.sidebar,
+.layout-creative .sidebar .cv-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 0.75rem;
+  display: block;
+  border: 2px solid rgba(255,255,255,0.3);
+}

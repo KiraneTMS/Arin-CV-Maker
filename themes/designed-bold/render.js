@@ -15,7 +15,7 @@
     },
     css: 'themes/designed-bold/style.css',
     render(d) {
-      const { escapeHtml, nl2br, buildContactLine, buildSkills, buildLangs, buildExperience, buildEducation } = H();
+      const { escapeHtml, nl2br, buildContactLine, buildSkills, buildLangs, buildExperience, buildEducation , buildPhoto } = H();
       const exp = buildExperience(d);
       const edu = buildEducation(d);
       return `

@@ -578,3 +578,50 @@ footer {
   transform: none;
   filter: none;
 }
+
+
+/* Profile photo (ATS / Designed) */
+.cv-photo {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.cv-photo.circle { border-radius: 50%; }
+.cv-photo.sidebar {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 0.85rem;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.25);
+}
+
+/* Project images (Web) */
+.proj-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0f172a;
+  border-radius: 10px 10px 0 0;
+}
+.proj-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.proj-card:hover .proj-img img {
+  transform: scale(1.04);
+}
+.proj-card .proj-body {
+  padding: 0;
+}
+.proj-card:has(.proj-img) {
+  padding: 0;
+  overflow: hidden;
+}
+.proj-card:has(.proj-img) .proj-body {
+  padding: 1rem 1.1rem 1.15rem;
+}

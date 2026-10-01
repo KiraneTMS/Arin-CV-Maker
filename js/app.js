@@ -15,6 +15,7 @@ function getEmptyData() {
   return {
     fullName: '',
     jobTitle: '',
+    photo: '',
     email: '',
     phone: '',
     location: '',
@@ -167,6 +168,12 @@ function addProject(data = {}) {
   if (data.name) el.querySelector('[name=projName]').value = data.name;
   if (data.role) el.querySelector('[name=projRole]').value = data.role;
   if (data.url) el.querySelector('[name=projUrl]').value = data.url;
+  if (data.image) {
+    const hid = el.querySelector('[name=projImageData]');
+    const url = el.querySelector('[name=projImage]');
+    if (data.image.startsWith('data:')) { if (hid) hid.value = data.image; }
+    else if (url) url.value = data.image;
+  }
   if (data.tech) el.querySelector('[name=projTech]').value = data.tech;
   if (data.desc) el.querySelector('[name=projDesc]').value = data.desc;
   el.querySelector('.remove-btn').addEventListener('click', () => {
@@ -174,6 +181,21 @@ function addProject(data = {}) {
     collectForm();
     renderPreview();
   });
+  const fileInp = el.querySelector('[name=projImageFile]');
+  if (fileInp) {
+    fileInp.addEventListener('change', () => {
+      const f = fileInp.files && fileInp.files[0];
+      if (!f) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        const hid = el.querySelector('[name=projImageData]');
+        if (hid) hid.value = reader.result;
+        collectForm();
+        renderPreview();
+      };
+      reader.readAsDataURL(f);
+    });
+  }
   $('#projects-list').appendChild(node);
 }
 
@@ -198,6 +220,7 @@ function collectForm() {
   const form = $('#cv-form');
   const fd = new FormData(form);
   state.data.fullName  = fd.get('fullName') || '';
+  state.data.photo    = ($('#photo-data') && $('#photo-data').value) || fd.get('photoUrl') || '';
   state.data.jobTitle  = fd.get('jobTitle') || '';
   state.data.email     = fd.get('email') || '';
   state.data.phone     = fd.get('phone') || '';
@@ -220,6 +243,8 @@ function collectForm() {
     name: el.querySelector('[name=projName]').value,
     role: el.querySelector('[name=projRole]').value,
     url:  el.querySelector('[name=projUrl]').value,
+    image: (el.querySelector('[name=projImageData]') && el.querySelector('[name=projImageData]').value)
+      || (el.querySelector('[name=projImage]') && el.querySelector('[name=projImage]').value) || '',
     tech: el.querySelector('[name=projTech]').value,
     desc: el.querySelector('[name=projDesc]').value
   }));
@@ -255,7 +280,16 @@ function renderPreview() {
   } else {
     paper.innerHTML = `<div class="cv-header"><h1>${(d.fullName || 'Your Name')}</h1></div>`;
   }
-  applyCustomColors(paper);
+  // ATS: always high-contrast; skip custom color overrides
+  if (state.type === 'ats') {
+    paper.style.removeProperty('--text');
+    paper.style.removeProperty('--muted');
+    paper.style.removeProperty('--accent');
+    paper.style.color = '#111111';
+    paper.style.background = '#ffffff';
+  } else {
+    applyCustomColors(paper);
+  }
   if (state.type === 'web' && window.CVPortfolioFx) {
     // slight delay so DOM is painted
     requestAnimationFrame(() => CVPortfolioFx.init(paper));
@@ -401,6 +435,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (addEdu) addEdu.addEventListener('click', () => addEducation());
   const addProj = $('#add-project');
   if (addProj) addProj.addEventListener('click', () => addProject());
+
+  const photoFile = $('#photo-file');
+  if (photoFile) {
+    photoFile.addEventListener('change', () => {
+      const f = photoFile.files && photoFile.files[0];
+      if (!f) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        const hid = $('#photo-data');
+        if (hid) hid.value = reader.result;
+        collectForm();
+        renderPreview();
+      };
+      reader.readAsDataURL(f);
+    });
+  }
 
   $$('.type-card button, .type-card').forEach(el => {
     el.addEventListener('click', e => {

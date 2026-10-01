@@ -15,7 +15,7 @@
     },
     css: 'themes/designed-frame/style.css',
     render(d) {
-      const { escapeHtml, nl2br, buildContactLine, buildSkills, buildLangs, buildExperience, buildEducation } = H();
+      const { escapeHtml, nl2br, buildContactLine, buildSkills, buildLangs, buildExperience, buildEducation , buildPhoto } = H();
       const exp = buildExperience(d).replace(/cv-item/g, 'df-item');
       const edu = buildEducation(d).replace(/cv-item/g, 'df-item');
       return `

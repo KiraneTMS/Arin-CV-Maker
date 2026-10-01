@@ -92,27 +92,39 @@
 
   
   function buildProjects(d) {
-    return (d.projects || []).filter(p => p.name || p.desc).map(p => {
+    return (d.projects || []).filter(p => p.name || p.desc || p.image).map(p => {
       const tech = (p.tech || '').split(',').map(s => s.trim()).filter(Boolean)
         .map(t => `<span>${escapeHtml(t)}</span>`).join('');
       const link = p.url
         ? `<a class="proj-link" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">View project</a>`
         : '';
+      const img = p.image
+        ? `<div class="proj-img"><img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name) || 'Project'}" loading="lazy" /></div>`
+        : '';
       return `
         <article class="proj-card">
-          <h3>${escapeHtml(p.name) || 'Project'}</h3>
-          ${p.role ? `<div class="proj-role">${escapeHtml(p.role)}</div>` : ''}
-          ${p.desc ? `<p>${nl2br(p.desc)}</p>` : ''}
-          ${tech ? `<div class="proj-tech">${tech}</div>` : ''}
-          ${link}
+          ${img}
+          <div class="proj-body">
+            <h3>${escapeHtml(p.name) || 'Project'}</h3>
+            ${p.role ? `<div class="proj-role">${escapeHtml(p.role)}</div>` : ''}
+            ${p.desc ? `<p>${nl2br(p.desc)}</p>` : ''}
+            ${tech ? `<div class="proj-tech">${tech}</div>` : ''}
+            ${link}
+          </div>
         </article>`;
     }).join('');
+  }
+
+  function buildPhoto(d, cls) {
+    if (!d.photo) return '';
+    const c = cls || 'cv-photo';
+    return `<img class="${c}" src="${escapeHtml(d.photo)}" alt="${escapeHtml(d.fullName) || 'Photo'}" />`;
   }
 
   window.CVHelpers = {
     formatMonth, escapeHtml, nl2br,
     buildContactLine, buildSkills, buildLangs,
-    buildExperience, buildEducation, buildProjects
+    buildExperience, buildEducation, buildProjects, buildPhoto
   };
 
   /** Theme registry: each theme file calls CVThemes.register(id, def) */
