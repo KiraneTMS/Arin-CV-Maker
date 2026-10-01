@@ -1,0 +1,796 @@
+/* =========================================================
+   CV Themes – full designs (not just color skins)
+   Each theme has its own layout, typography & personality
+   ========================================================= */
+
+/* ---------- Shared base ---------- */
+
+/* Customizable tokens – overridden by JS applyCustomColors() */
+.cv-paper {
+  --accent: #1e293b;
+  --accent-dark: #1e293b;
+  --text: #1e293b;
+  --muted: #64748b;
+  --skill-bg: #f1f5f9;
+  --card-bg: #f8fafc;
+  --card-border: #e2e8f0;
+  --sidebar-bg: #f8fafc;
+  --header-bg: transparent;
+  --bar: #1e293b;
+  --pf-hero-from: #0f172a;
+}
+
+.cv-paper .skill-tag,
+.cv-paper .lang-tag {
+  background: var(--skill-bg);
+}
+
+.cv-paper .cv-section h2 {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.cv-paper {
+  --accent: #1e293b;
+  --text: #1e293b;
+  --muted: #64748b;
+  --bg: #ffffff;
+  --sidebar-bg: #f8fafc;
+  --skill-bg: #f1f5f9;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.cv-paper a { color: var(--accent); text-decoration: none; }
+.cv-paper a:hover { text-decoration: underline; }
+
+/* =========================================================
+   1. CLASSIC – clean single column (ATS-safe + Web)
+   ========================================================= */
+.theme-classic {
+  --accent: #111827;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+.theme-classic .cv-header {
+  padding: 2rem 2rem 1.25rem;
+  border-bottom: 2px solid #111827;
+}
+
+.theme-classic .cv-header h1 {
+  margin: 0 0 0.2rem;
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.theme-classic .cv-header .title {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.theme-classic .cv-header .contact {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+.theme-classic .cv-body {
+  padding: 1.25rem 2rem 2rem;
+}
+
+.theme-classic .cv-section {
+  margin-top: 1.35rem;
+}
+
+.theme-classic .cv-section h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1.5px solid #111827;
+}
+
+.theme-classic .cv-item {
+  margin-bottom: 1rem;
+}
+
+.theme-classic .cv-item h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.theme-classic .cv-item .meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.15rem 0 0.35rem;
+}
+
+.theme-classic .cv-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.theme-classic .skills-list,
+.theme-classic .lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.theme-classic .skill-tag,
+.theme-classic .lang-tag {
+  background: #f3f4f6;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   2. MODERN SIDEBAR – two column, strong accent sidebar
+   ========================================================= */
+.theme-modern {
+  --accent: #1e3a5f;
+  --sidebar-bg: #1e3a5f;
+  --sidebar-text: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --skill-bg: rgba(255,255,255,0.15);
+}
+
+.theme-modern .layout-modern {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100%;
+}
+
+.theme-modern .sidebar {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 2rem 1.4rem;
+}
+
+.theme-modern .sidebar h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.theme-modern .sidebar .title {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.theme-modern .sidebar .contact-item {
+  font-size: 0.8rem;
+  margin-bottom: 0.45rem;
+  opacity: 0.9;
+  word-break: break-word;
+}
+
+.theme-modern .sidebar .contact-item a {
+  color: #fff;
+}
+
+.theme-modern .sidebar h2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 1.5rem 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.theme-modern .sidebar .skill-tag,
+.theme-modern .sidebar .lang-tag {
+  display: inline-block;
+  background: var(--skill-bg);
+  color: #fff;
+  padding: 0.18rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  margin: 0 0.25rem 0.3rem 0;
+}
+
+.theme-modern .main {
+  padding: 2rem 1.75rem;
+}
+
+.theme-modern .main .cv-section {
+  margin-bottom: 1.5rem;
+}
+
+.theme-modern .main h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  margin: 0 0 0.7rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.theme-modern .cv-item {
+  margin-bottom: 1.1rem;
+}
+
+.theme-modern .cv-item h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.theme-modern .cv-item .meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.15rem 0 0.35rem;
+}
+
+.theme-modern .cv-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   3. ELEGANT – centered, serif, lots of whitespace
+   ========================================================= */
+.theme-elegant {
+  --accent: #4a3728;
+  --text: #2c241b;
+  --muted: #8b7355;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.theme-elegant .cv-header {
+  text-align: center;
+  padding: 2.5rem 2.5rem 1.5rem;
+}
+
+.theme-elegant .cv-header h1 {
+  margin: 0 0 0.3rem;
+  font-size: 2.1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.theme-elegant .cv-header .title {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+
+.theme-elegant .cv-header .contact {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 1.2rem;
+}
+
+.theme-elegant .cv-header .divider {
+  width: 60px;
+  height: 1px;
+  background: var(--accent);
+  margin: 1.25rem auto 0;
+}
+
+.theme-elegant .cv-body {
+  padding: 0.5rem 2.75rem 2.5rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.theme-elegant .cv-section {
+  margin-top: 1.6rem;
+  text-align: center;
+}
+
+.theme-elegant .cv-section h2 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.9rem;
+}
+
+.theme-elegant .cv-item {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.theme-elegant .cv-item h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.theme-elegant .cv-item .meta {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0.2rem 0 0.4rem;
+}
+
+.theme-elegant .cv-item p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.theme-elegant .skills-list,
+.theme-elegant .lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.theme-elegant .skill-tag,
+.theme-elegant .lang-tag {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  background: transparent;
+}
+
+/* =========================================================
+   4. CREATIVE – bold accent bar + asymmetric
+   ========================================================= */
+.theme-creative {
+  --accent: #7c3aed;
+  --text: #1e1b4b;
+  --muted: #6b7280;
+  --bar: #7c3aed;
+}
+
+.theme-creative .layout-creative {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+}
+
+.theme-creative .accent-bar {
+  background: var(--bar);
+}
+
+.theme-creative .content {
+  padding: 2rem 2rem 2rem 1.75rem;
+}
+
+.theme-creative .cv-header h1 {
+  margin: 0 0 0.15rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.theme-creative .cv-header .title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.theme-creative .cv-header .contact {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
+.theme-creative .cv-section {
+  margin-top: 1.5rem;
+}
+
+.theme-creative .cv-section h2 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.theme-creative .cv-section h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent), transparent);
+}
+
+.theme-creative .cv-item {
+  margin-bottom: 1.1rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid #e9d5ff;
+}
+
+.theme-creative .cv-item h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 650;
+}
+
+.theme-creative .cv-item .meta {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin: 0.15rem 0 0.35rem;
+}
+
+.theme-creative .cv-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.theme-creative .skills-list,
+.theme-creative .lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.theme-creative .skill-tag,
+.theme-creative .lang-tag {
+  background: #f3e8ff;
+  color: #5b21b6;
+  padding: 0.22rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* =========================================================
+   5. MINIMAL – ultra clean, thin lines, modern
+   ========================================================= */
+.theme-minimal {
+  --accent: #0f172a;
+  --text: #0f172a;
+  --muted: #94a3b8;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.theme-minimal .cv-header {
+  padding: 2.25rem 2.25rem 1.5rem;
+}
+
+.theme-minimal .cv-header h1 {
+  margin: 0 0 0.15rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.theme-minimal .cv-header .title {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.theme-minimal .cv-header .contact {
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.25rem;
+}
+
+.theme-minimal .cv-body {
+  padding: 0 2.25rem 2.25rem;
+}
+
+.theme-minimal .cv-section {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.theme-minimal .cv-section:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.theme-minimal .cv-section h2 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 0.85rem;
+}
+
+.theme-minimal .cv-item {
+  margin-bottom: 1.1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 1rem;
+}
+
+.theme-minimal .cv-item h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.theme-minimal .cv-item .meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.theme-minimal .cv-item .company {
+  grid-column: 1 / -1;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.theme-minimal .cv-item p {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.88rem;
+  color: #334155;
+}
+
+.theme-minimal .skills-list,
+.theme-minimal .lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.theme-minimal .skill-tag,
+.theme-minimal .lang-tag {
+  background: none;
+  padding: 0;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.theme-minimal .skill-tag::before,
+.theme-minimal .lang-tag::before {
+  content: "•";
+  color: var(--muted);
+  margin-right: 0.4rem;
+}
+
+/* =========================================================
+   ATS force overrides (always single-column + high parse)
+   ========================================================= */
+.cv-paper.ats .layout-modern,
+.cv-paper.ats .layout-creative {
+  display: block !important;
+}
+
+.cv-paper.ats .sidebar,
+.cv-paper.ats .accent-bar {
+  display: none !important;
+}
+
+.cv-paper.ats .main,
+.cv-paper.ats .content {
+  padding: 0 !important;
+}
+
+.cv-paper.ats {
+  /* Force classic-like readable structure even if theme is fancy */
+  font-family: system-ui, -apple-system, sans-serif !important;
+}
+
+/* =========================================================
+   6. PORTFOLIO – hero header + card sections (web portfolio)
+   ========================================================= */
+.theme-portfolio {
+  --accent: #0ea5e9;
+  --accent-dark: #0369a1;
+  --text: #0f172a;
+  --muted: #64748b;
+  --card-bg: #f8fafc;
+  --card-border: #e2e8f0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.theme-portfolio .layout-portfolio {
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-portfolio .pf-hero {
+  background: linear-gradient(135deg, var(--pf-hero-from, #0f172a) 0%, var(--header-bg, #1e293b) 60%, var(--accent, #0c4a6e) 100%);
+  color: #fff;
+  padding: 2.75rem 2rem 2.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-portfolio .pf-hero::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(14, 165, 233, 0.25);
+  pointer-events: none;
+}
+
+.theme-portfolio .pf-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.theme-portfolio .pf-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #7dd3fc;
+  font-weight: 600;
+}
+
+.theme-portfolio .pf-hero h1 {
+  margin: 0 0 0.35rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.theme-portfolio .pf-role {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: #bae6fd;
+  font-weight: 500;
+}
+
+.theme-portfolio .pf-contact {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+}
+
+.theme-portfolio .pf-contact a {
+  color: #7dd3fc;
+}
+
+.theme-portfolio .pf-body {
+  padding: 1.75rem 2rem 2.25rem;
+}
+
+.theme-portfolio .pf-section {
+  margin-bottom: 1.75rem;
+}
+
+.theme-portfolio .pf-section:last-child {
+  margin-bottom: 0;
+}
+
+.theme-portfolio .pf-section h2 {
+  margin: 0 0 0.85rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.theme-portfolio .pf-about {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.theme-portfolio .pf-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.theme-portfolio .pf-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  border-left: 3px solid var(--accent);
+}
+
+.theme-portfolio .pf-card-sm {
+  padding: 0.85rem 1.15rem;
+}
+
+.theme-portfolio .pf-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.theme-portfolio .pf-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.theme-portfolio .pf-period {
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.theme-portfolio .pf-company {
+  font-size: 0.88rem;
+  color: var(--accent-dark);
+  margin: 0.2rem 0 0.4rem;
+  font-weight: 500;
+}
+
+.theme-portfolio .pf-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.theme-portfolio .skills-list,
+.theme-portfolio .lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.theme-portfolio .skill-tag,
+.theme-portfolio .lang-tag {
+  background: var(--skill-bg, #e0f2fe);
+  color: var(--accent-dark, #0369a1);
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ATS: hide portfolio hero complexity */
+.cv-paper.ats .layout-portfolio .pf-hero {
+  background: transparent !important;
+  color: inherit !important;
+  padding: 1.5rem 2rem 1rem !important;
+}
+.cv-paper.ats .pf-hero h1,
+.cv-portfolio.ats .pf-role { color: inherit !important; }
+.cv-paper.ats .pf-eyebrow { display: none; }
+.cv-paper.ats .pf-card {
+  border: none !important;
+  border-left: none !important;
+  background: transparent !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

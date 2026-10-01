@@ -1,0 +1,179 @@
+/* =========================================================
+   WEB-SPLIT – left profile rail + right content (site layout)
+   ========================================================= */
+.theme-web-split {
+  --accent: #14b8a6;
+  --accent-dark: #0f766e;
+  --text: #134e4a;
+  --muted: #5eead4;
+  --skill-bg: #ccfbf1;
+  --card-bg: #f0fdfa;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.theme-web-split .layout-web-split {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 640px;
+}
+
+.theme-web-split .ws-rail {
+  background: var(--header-bg, #0f766e);
+  color: #fff;
+  padding: 2.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.theme-web-split .ws-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: color-mix(in srgb, #fff 20%, transparent);
+  border: 2px solid color-mix(in srgb, #fff 40%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.theme-web-split .ws-rail h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.theme-web-split .ws-role {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.theme-web-split .ws-rail h2 {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 1.25rem 0 0.55rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid color-mix(in srgb, #fff 25%, transparent);
+  color: #fff;
+  opacity: 0.95;
+}
+
+.theme-web-split .ws-contact-item {
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+  word-break: break-word;
+  color: #fff;
+}
+
+.theme-web-split .ws-contact-item a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.theme-web-split .ws-rail .skill-tag,
+.theme-web-split .ws-rail .lang-tag {
+  display: inline-block;
+  background: color-mix(in srgb, #fff 18%, transparent);
+  color: #fff;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  margin: 0 0.25rem 0.3rem 0;
+}
+
+.theme-web-split .ws-main {
+  padding: 2rem 1.75rem 2.25rem;
+  background: #fff;
+}
+
+.theme-web-split .ws-main .ws-section {
+  margin-bottom: 1.6rem;
+}
+
+.theme-web-split .ws-main h2 {
+  margin: 0 0 0.85rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.35rem;
+}
+
+.theme-web-split .ws-item {
+  margin-bottom: 1.1rem;
+  padding: 0.85rem 1rem;
+  background: var(--card-bg, #f0fdfa);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+.theme-web-split .ws-item h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.theme-web-split .ws-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0.15rem 0 0.35rem;
+}
+
+.theme-web-split .ws-item p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .theme-web-split .layout-web-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Projects grid (Web portfolio) */
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+.proj-card {
+  background: var(--card-bg, #f8fafc);
+  border: 1px solid color-mix(in srgb, var(--accent, #6366f1) 25%, transparent);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  border-left: 3px solid var(--accent, #6366f1);
+}
+.proj-card h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text, #0f172a);
+}
+.proj-role {
+  font-size: 0.82rem;
+  color: var(--muted, #64748b);
+  margin: 0.2rem 0 0.4rem;
+}
+.proj-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.5;
+}

@@ -1,0 +1,64 @@
+
+.theme-designed-frame {
+  --accent: #7c3aed;
+  --text: #1e1b4b;
+  --muted: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.theme-designed-frame .df-frame {
+  margin: 1rem;
+  border: 2px solid var(--accent, #7c3aed);
+  border-radius: 4px;
+  padding: 1.75rem 1.75rem 2rem;
+}
+.theme-designed-frame .df-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.theme-designed-frame .df-header h1 {
+  margin: 0 0 0.2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+.theme-designed-frame .df-header .title {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.theme-designed-frame .df-header .contact {
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 1rem;
+}
+.theme-designed-frame .df-section { margin-top: 1.2rem; }
+.theme-designed-frame .df-section h2 {
+  margin: 0 0 0.6rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+}
+.theme-designed-frame .df-item { margin-bottom: 0.9rem; }
+.theme-designed-frame .df-item h3 { margin: 0; font-size: 0.98rem; font-weight: 650; color: var(--text); }
+.theme-designed-frame .df-item .meta { font-size: 0.82rem; color: var(--muted); margin: 0.1rem 0 0.3rem; }
+.theme-designed-frame .df-item p { margin: 0; font-size: 0.88rem; }
+.theme-designed-frame .skills-list, .theme-designed-frame .lang-list {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem;
+}
+.theme-designed-frame .skill-tag, .theme-designed-frame .lang-tag {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+}

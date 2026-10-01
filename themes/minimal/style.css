@@ -1,0 +1,116 @@
+/* =========================================================
+   5. MINIMAL – ultra clean, thin lines, modern
+   ========================================================= */
+.theme-minimal {
+  --accent: #0f172a;
+  --text: #0f172a;
+  --muted: #94a3b8;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.theme-minimal .cv-header {
+  padding: 2.25rem 2.25rem 1.5rem;
+}
+
+.theme-minimal .cv-header h1 {
+  margin: 0 0 0.15rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.theme-minimal .cv-header .title {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.theme-minimal .cv-header .contact {
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.25rem;
+}
+
+.theme-minimal .cv-body {
+  padding: 0 2.25rem 2.25rem;
+}
+
+.theme-minimal .cv-section {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.theme-minimal .cv-section:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.theme-minimal .cv-section h2 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 0.85rem;
+}
+
+.theme-minimal .cv-item {
+  margin-bottom: 1.1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 1rem;
+}
+
+.theme-minimal .cv-item h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.theme-minimal .cv-item .meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.theme-minimal .cv-item .company {
+  grid-column: 1 / -1;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.theme-minimal .cv-item p {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.88rem;
+  color: #334155;
+}
+
+.theme-minimal .skills-list,
+.theme-minimal .lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.theme-minimal .skill-tag,
+.theme-minimal .lang-tag {
+  background: none;
+  padding: 0;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.theme-minimal .skill-tag::before,
+.theme-minimal .lang-tag::before {
+  content: "•";
+  color: var(--muted);
+  margin-right: 0.4rem;
+}
+

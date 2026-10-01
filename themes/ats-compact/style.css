@@ -1,0 +1,79 @@
+/* ATS Compact – dense single column, high parse */
+.theme-ats-compact {
+  --accent: #111;
+  --text: #111;
+  --muted: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
+}
+.theme-ats-compact .cv-header {
+  padding: 1.25rem 1.5rem 0.75rem;
+  border-bottom: 1px solid #111;
+}
+.theme-ats-compact .cv-header h1 {
+  margin: 0 0 0.15rem;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #111;
+}
+.theme-ats-compact .cv-header .title {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 0.35rem;
+}
+.theme-ats-compact .cv-header .contact {
+  font-size: 0.8rem;
+  color: #444;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.85rem;
+}
+.theme-ats-compact .cv-body {
+  padding: 0.75rem 1.5rem 1.5rem;
+}
+.theme-ats-compact .cv-section {
+  margin-top: 0.85rem;
+}
+.theme-ats-compact .cv-section h2 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  border-bottom: 1px solid #111;
+  padding-bottom: 0.15rem;
+  color: #111;
+}
+.theme-ats-compact .cv-item {
+  margin-bottom: 0.65rem;
+}
+.theme-ats-compact .cv-item h3 {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.theme-ats-compact .cv-item .meta {
+  font-size: 0.8rem;
+  color: #444;
+  margin: 0.05rem 0 0.2rem;
+}
+.theme-ats-compact .cv-item p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+.theme-ats-compact .skills-list,
+.theme-ats-compact .lang-list {
+  display: block;
+  font-size: 0.85rem;
+}
+.theme-ats-compact .skill-tag,
+.theme-ats-compact .lang-tag {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.85rem;
+}
+.theme-ats-compact .skill-tag:not(:last-child)::after,
+.theme-ats-compact .lang-tag:not(:last-child)::after {
+  content: " · ";
+}

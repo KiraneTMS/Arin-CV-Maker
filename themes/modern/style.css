@@ -1,0 +1,109 @@
+/* =========================================================
+   2. MODERN SIDEBAR – two column, strong accent sidebar
+   ========================================================= */
+.theme-modern {
+  --accent: #1e3a5f;
+  --sidebar-bg: #1e3a5f;
+  --sidebar-text: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --skill-bg: rgba(255,255,255,0.15);
+}
+
+.theme-modern .layout-modern {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100%;
+}
+
+.theme-modern .sidebar {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 2rem 1.4rem;
+}
+
+.theme-modern .sidebar h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.theme-modern .sidebar .title {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.theme-modern .sidebar .contact-item {
+  font-size: 0.8rem;
+  margin-bottom: 0.45rem;
+  opacity: 0.9;
+  word-break: break-word;
+}
+
+.theme-modern .sidebar .contact-item a {
+  color: #fff;
+}
+
+.theme-modern .sidebar h2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 1.5rem 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.theme-modern .sidebar .skill-tag,
+.theme-modern .sidebar .lang-tag {
+  display: inline-block;
+  background: var(--skill-bg);
+  color: #fff;
+  padding: 0.18rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  margin: 0 0.25rem 0.3rem 0;
+}
+
+.theme-modern .main {
+  padding: 2rem 1.75rem;
+}
+
+.theme-modern .main .cv-section {
+  margin-bottom: 1.5rem;
+}
+
+.theme-modern .main h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  margin: 0 0 0.7rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.theme-modern .cv-item {
+  margin-bottom: 1.1rem;
+}
+
+.theme-modern .cv-item h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.theme-modern .cv-item .meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.15rem 0 0.35rem;
+}
+
+.theme-modern .cv-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+

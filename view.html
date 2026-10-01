@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web CV</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/themes-base.css" />
+  <link rel="stylesheet" href="themes/classic/style.css" />
+  <link rel="stylesheet" href="themes/modern/style.css" />
+  <link rel="stylesheet" href="themes/elegant/style.css" />
+  <link rel="stylesheet" href="themes/creative/style.css" />
+  <link rel="stylesheet" href="themes/minimal/style.css" />
+  <link rel="stylesheet" href="themes/designed-frame/style.css" />
+  <link rel="stylesheet" href="themes/web-office/style.css" />
+  <link rel="stylesheet" href="themes/web-pro/style.css" />
+  <link rel="stylesheet" href="themes/web-designer/style.css" />
+  <link rel="stylesheet" href="themes/web-artist/style.css" />
+  <link rel="stylesheet" href="themes/web-programmer/style.css" />
+  <link rel="stylesheet" href="themes/web-doctor/style.css" />
+  <link rel="stylesheet" href="themes/web-teacher/style.css" />
+  <link rel="stylesheet" href="themes/designed-timeline/style.css" />
+  <link rel="stylesheet" href="themes/designed-bold/style.css" />
+  <link rel="stylesheet" href="themes/ats-banded/style.css" />
+  <link rel="stylesheet" href="themes/ats-serif/style.css" />
+  <link rel="stylesheet" href="themes/ats-compact/style.css" />
+  <style>
+    body { background: #e5e7eb; }
+    .view-wrapper {
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .notfound-msg {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body>
+  <div class="view-wrapper">
+    <div id="status" class="notfound-msg">Loading…</div>
+    <div id="cv-container" class="cv-paper" hidden></div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/theme-helpers.js"></script>
+  <script src="js/portfolio-fx.js"></script>
+  <script src="themes/classic/render.js"></script>
+  <script src="themes/modern/render.js"></script>
+  <script src="themes/elegant/render.js"></script>
+  <script src="themes/creative/render.js"></script>
+  <script src="themes/minimal/render.js"></script>
+  <script src="themes/designed-frame/render.js"></script>
+  <script src="themes/web-office/render.js"></script>
+  <script src="themes/web-pro/render.js"></script>
+  <script src="themes/web-designer/render.js"></script>
+  <script src="themes/web-artist/render.js"></script>
+  <script src="themes/web-programmer/render.js"></script>
+  <script src="themes/web-doctor/render.js"></script>
+  <script src="themes/web-teacher/render.js"></script>
+  <script src="themes/designed-timeline/render.js"></script>
+  <script src="themes/designed-bold/render.js"></script>
+  <script src="themes/ats-banded/render.js"></script>
+  <script src="themes/ats-serif/render.js"></script>
+  <script src="themes/ats-compact/render.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+
+    function applyCustomColors(el, c) {
+      if (!c || !el) return;
+      if (c.accent) {
+        el.style.setProperty('--accent', c.accent);
+        el.style.setProperty('--accent-dark', c.accent);
+        el.style.setProperty('--bar', c.accent);
+      }
+      if (c.header) {
+        el.style.setProperty('--header-bg', c.header);
+        el.style.setProperty('--sidebar-bg', c.header);
+        el.style.setProperty('--pf-hero-from', c.header);
+      }
+      if (c.text) el.style.setProperty('--text', c.text);
+      if (c.muted) {
+        el.style.setProperty('--muted', c.muted);
+        el.style.setProperty('--card-border', c.muted + '44');
+      }
+      if (c.skill) el.style.setProperty('--skill-bg', c.skill);
+      if (c.card) el.style.setProperty('--card-bg', c.card);
+    }
+
+    function renderCV(payload) {
+      const d = payload.data;
+      const themeId = payload.theme || 'classic';
+      const container = document.getElementById('cv-container');
+      container.className = `cv-paper theme-${themeId} web`;
+      container.hidden = false;
+      document.getElementById('status').hidden = true;
+
+      const theme = CVThemes.get(themeId);
+      if (theme && theme.render) {
+        container.innerHTML = theme.render(d);
+      } else {
+        container.innerHTML = `<div class="cv-header"><h1>${d.fullName || ''}</h1></div>`;
+      }
+      applyCustomColors(container, payload.customColors);
+      if (window.CVPortfolioFx) requestAnimationFrame(() => CVPortfolioFx.init(container));
+      document.title = (d.fullName || 'Web CV') + ' – CV';
+    }
+
+    async function load() {
+      if (!id) {
+        document.getElementById('status').innerHTML = '<h2>Missing ID</h2><p>No CV id provided.</p>';
+        return;
+      }
+
+      let payload = null;
+
+      if (typeof db !== 'undefined' && db) {
+        try {
+          const snap = await db.collection('webcvs').doc(id).get();
+          if (snap.exists) payload = snap.data();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      if (!payload) {
+        const raw = localStorage.getItem('webcv_' + id);
+        if (raw) payload = JSON.parse(raw);
+      }
+
+      if (!payload) {
+        document.getElementById('status').innerHTML = '<h2>Not found</h2><p>This Web CV does not exist or has been deleted.</p>';
+        return;
+      }
+
+      if (payload.expiresAt && new Date(payload.expiresAt) < new Date()) {
+        document.getElementById('status').innerHTML = '<h2>Expired</h2><p>This Web CV was only available for 30 days and has now been removed.</p>';
+        if (typeof db !== 'undefined' && db) {
+          try { await db.collection('webcvs').doc(id).delete(); } catch (_) {}
+        }
+        localStorage.removeItem('webcv_' + id);
+        return;
+      }
+
+      renderCV(payload);
+    }
+
+    load();
+  </script>
+</body>
+</html>

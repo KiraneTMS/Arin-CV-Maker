@@ -1,0 +1,72 @@
+/* =========================================================
+   CV Themes – full designs (not just color skins)
+   Each theme has its own layout, typography & personality
+   ========================================================= */
+
+/* ---------- Shared base ---------- */
+
+/* Customizable tokens – overridden by JS applyCustomColors() */
+.cv-paper {
+  --accent: #1e293b;
+  --accent-dark: #1e293b;
+  --text: #1e293b;
+  --muted: #64748b;
+  --skill-bg: #f1f5f9;
+  --card-bg: #f8fafc;
+  --card-border: #e2e8f0;
+  --sidebar-bg: #f8fafc;
+  --header-bg: transparent;
+  --bar: #1e293b;
+  --pf-hero-from: #0f172a;
+}
+
+.cv-paper .skill-tag,
+.cv-paper .lang-tag {
+  background: var(--skill-bg);
+}
+
+.cv-paper .cv-section h2 {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.cv-paper {
+  --accent: #1e293b;
+  --text: #1e293b;
+  --muted: #64748b;
+  --bg: #ffffff;
+  --sidebar-bg: #f8fafc;
+  --skill-bg: #f1f5f9;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.cv-paper a { color: var(--accent); text-decoration: none; }
+.cv-paper a:hover { text-decoration: underline; }
+
+
+/* =========================================================
+   ATS force overrides (always single-column + high parse)
+   ========================================================= */
+.cv-paper.ats .layout-modern,
+.cv-paper.ats .layout-creative {
+  display: block !important;
+}
+
+.cv-paper.ats .sidebar,
+.cv-paper.ats .accent-bar {
+  display: none !important;
+}
+
+.cv-paper.ats .main,
+.cv-paper.ats .content {
+  padding: 0 !important;
+}
+
+.cv-paper.ats {
+  /* Force classic-like readable structure even if theme is fancy */
+  font-family: system-ui, -apple-system, sans-serif !important;
+}
+

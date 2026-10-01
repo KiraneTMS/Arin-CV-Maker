@@ -1,0 +1,62 @@
+
+.theme-ats-serif {
+  --accent: #1a1a1a;
+  --text: #1a1a1a;
+  --muted: #555;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.theme-ats-serif .cv-header {
+  padding: 1.75rem 2rem 1rem;
+  text-align: center;
+  border-bottom: 2px solid #1a1a1a;
+}
+.theme-ats-serif .cv-header h1 {
+  margin: 0 0 0.2rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+.theme-ats-serif .cv-header .title {
+  font-size: 1rem;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+.theme-ats-serif .cv-header .contact {
+  font-size: 0.82rem;
+  color: #555;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 1rem;
+  font-family: Arial, sans-serif;
+}
+.theme-ats-serif .cv-body { padding: 1rem 2rem 2rem; }
+.theme-ats-serif .cv-section { margin-top: 1.15rem; }
+.theme-ats-serif .cv-section h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 0.2rem;
+  color: #1a1a1a;
+  font-family: Arial, sans-serif;
+}
+.theme-ats-serif .cv-item { margin-bottom: 0.85rem; }
+.theme-ats-serif .cv-item h3 { margin: 0; font-size: 1rem; font-weight: 700; }
+.theme-ats-serif .cv-item .meta {
+  font-size: 0.82rem;
+  color: #555;
+  margin: 0.1rem 0 0.3rem;
+  font-family: Arial, sans-serif;
+}
+.theme-ats-serif .cv-item p { margin: 0; font-size: 0.9rem; }
+.theme-ats-serif .skills-list, .theme-ats-serif .lang-list {
+  display: flex; flex-wrap: wrap; gap: 0.35rem;
+  font-family: Arial, sans-serif;
+}
+.theme-ats-serif .skill-tag, .theme-ats-serif .lang-tag {
+  background: #f0f0f0; padding: 0.15rem 0.5rem; border-radius: 2px; font-size: 0.8rem;
+}

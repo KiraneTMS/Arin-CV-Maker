@@ -1,0 +1,109 @@
+/* =========================================================
+   4. CREATIVE – bold accent bar + asymmetric
+   ========================================================= */
+.theme-creative {
+  --accent: #7c3aed;
+  --text: #1e1b4b;
+  --muted: #6b7280;
+  --bar: #7c3aed;
+}
+
+.theme-creative .layout-creative {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+}
+
+.theme-creative .accent-bar {
+  background: var(--bar);
+}
+
+.theme-creative .content {
+  padding: 2rem 2rem 2rem 1.75rem;
+}
+
+.theme-creative .cv-header h1 {
+  margin: 0 0 0.15rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.theme-creative .cv-header .title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.theme-creative .cv-header .contact {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
+.theme-creative .cv-section {
+  margin-top: 1.5rem;
+}
+
+.theme-creative .cv-section h2 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.theme-creative .cv-section h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent), transparent);
+}
+
+.theme-creative .cv-item {
+  margin-bottom: 1.1rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid #e9d5ff;
+}
+
+.theme-creative .cv-item h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 650;
+}
+
+.theme-creative .cv-item .meta {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin: 0.15rem 0 0.35rem;
+}
+
+.theme-creative .cv-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.theme-creative .skills-list,
+.theme-creative .lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.theme-creative .skill-tag,
+.theme-creative .lang-tag {
+  background: #f3e8ff;
+  color: #5b21b6;
+  padding: 0.22rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+

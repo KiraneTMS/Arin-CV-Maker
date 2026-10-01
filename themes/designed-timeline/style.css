@@ -1,0 +1,76 @@
+
+.theme-designed-timeline {
+  --accent: #2563eb;
+  --text: #1e3a5f;
+  --muted: #64748b;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.theme-designed-timeline .dt-header {
+  padding: 2rem 2rem 1.25rem;
+  text-align: left;
+}
+.theme-designed-timeline .dt-header h1 {
+  margin: 0 0 0.15rem;
+  font-size: 1.85rem;
+  font-weight: 750;
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+.theme-designed-timeline .dt-header .title {
+  font-size: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.theme-designed-timeline .dt-header .contact {
+  font-size: 0.84rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+}
+.theme-designed-timeline .dt-body { padding: 0 2rem 2rem; }
+.theme-designed-timeline .dt-section { margin-top: 1.35rem; }
+.theme-designed-timeline .dt-section h2 {
+  margin: 0 0 0.85rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--accent);
+}
+.theme-designed-timeline .dt-line {
+  border-left: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  margin-left: 0.4rem;
+  padding-left: 1.2rem;
+}
+.theme-designed-timeline .dt-item {
+  position: relative;
+  margin-bottom: 1.15rem;
+}
+.theme-designed-timeline .dt-item::before {
+  content: "";
+  position: absolute;
+  left: -1.45rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.theme-designed-timeline .dt-item h3 { margin: 0; font-size: 1rem; font-weight: 650; color: var(--text); }
+.theme-designed-timeline .dt-item .meta { font-size: 0.82rem; color: var(--muted); margin: 0.15rem 0 0.35rem; }
+.theme-designed-timeline .dt-item p { margin: 0; font-size: 0.88rem; color: #475569; }
+.theme-designed-timeline .skills-list, .theme-designed-timeline .lang-list {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.theme-designed-timeline .skill-tag, .theme-designed-timeline .lang-tag {
+  background: var(--skill-bg, #dbeafe);
+  color: var(--accent);
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}

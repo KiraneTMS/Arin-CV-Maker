@@ -1,0 +1,63 @@
+
+.theme-designed-bold {
+  --accent: #dc2626;
+  --text: #18181b;
+  --muted: #71717a;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.theme-designed-bold .layout-db {
+  display: grid;
+  grid-template-columns: 8px 1fr;
+}
+.theme-designed-bold .db-bar {
+  background: var(--accent, #dc2626);
+}
+.theme-designed-bold .db-content { padding: 1.75rem 1.75rem 2rem 1.5rem; }
+.theme-designed-bold .db-header h1 {
+  margin: 0 0 0.1rem;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+.theme-designed-bold .db-header .title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.theme-designed-bold .db-header .contact {
+  font-size: 0.84rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+}
+.theme-designed-bold .db-section { margin-top: 1.4rem; }
+.theme-designed-bold .db-section h2 {
+  margin: 0 0 0.65rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 800;
+  color: var(--accent);
+}
+.theme-designed-bold .db-item {
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.theme-designed-bold .db-item h3 { margin: 0; font-size: 1.02rem; font-weight: 700; }
+.theme-designed-bold .db-item .meta { font-size: 0.84rem; color: var(--muted); margin: 0.1rem 0 0.3rem; }
+.theme-designed-bold .db-item p { margin: 0; font-size: 0.9rem; }
+.theme-designed-bold .skills-list, .theme-designed-bold .lang-list {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.theme-designed-bold .skill-tag, .theme-designed-bold .lang-tag {
+  background: var(--skill-bg, #fee2e2);
+  color: var(--accent);
+  padding: 0.22rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Builder – ATS · Designed · Web</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/themes-base.css" />
+  <link rel="stylesheet" href="themes/classic/style.css" />
+  <link rel="stylesheet" href="themes/modern/style.css" />
+  <link rel="stylesheet" href="themes/elegant/style.css" />
+  <link rel="stylesheet" href="themes/creative/style.css" />
+  <link rel="stylesheet" href="themes/minimal/style.css" />
+  <link rel="stylesheet" href="themes/designed-frame/style.css" />
+  <link rel="stylesheet" href="themes/web-office/style.css" />
+  <link rel="stylesheet" href="themes/web-pro/style.css" />
+  <link rel="stylesheet" href="themes/web-designer/style.css" />
+  <link rel="stylesheet" href="themes/web-artist/style.css" />
+  <link rel="stylesheet" href="themes/web-programmer/style.css" />
+  <link rel="stylesheet" href="themes/web-doctor/style.css" />
+  <link rel="stylesheet" href="themes/web-teacher/style.css" />
+  <link rel="stylesheet" href="themes/designed-timeline/style.css" />
+  <link rel="stylesheet" href="themes/designed-bold/style.css" />
+  <link rel="stylesheet" href="themes/ats-banded/style.css" />
+  <link rel="stylesheet" href="themes/ats-serif/style.css" />
+  <link rel="stylesheet" href="themes/ats-compact/style.css" />
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <ul>
+        <li><strong>CV Builder</strong></li>
+      </ul>
+      <ul>
+        <li><a href="#" id="nav-home" class="active">Home</a></li>
+        <li><a href="#" id="nav-builder">Build CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HOME -->
+    <section id="home-view">
+      <h1>Create your professional CV</h1>
+      <p class="lead">Choose the format that fits your goal. ATS & Designed export as PDF (no account needed). Web CV is hosted for 30 days.</p>
+
+      <div class="type-cards">
+        <article class="type-card" data-type="ats">
+          <h3>ATS CV</h3>
+          <p>Clean, single-column layout optimized for Applicant Tracking Systems. High parse success rate.</p>
+          <button class="contrast" data-type="ats">Start ATS CV</button>
+        </article>
+
+        <article class="type-card" data-type="designed">
+          <h3>Designed CV</h3>
+          <p>Modern two-column designs with color themes. Perfect for creative & design roles.</p>
+          <button class="contrast" data-type="designed">Start Designed CV</button>
+        </article>
+
+        <article class="type-card" data-type="web">
+          <h3>Web CV</h3>
+          <p>Live online résumé with shareable link. Data kept for 30 days, then auto-deleted.</p>
+          <button class="contrast" data-type="web">Start Web CV</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- BUILDER -->
+    <section id="builder-view" hidden>
+      <div class="builder-header">
+        <h2 id="builder-title">Build your CV</h2>
+        <div class="builder-actions">
+          <button id="btn-back" class="secondary outline">← Back</button>
+          <button id="btn-preview" class="secondary">Preview</button>
+          <button id="btn-download" class="contrast" hidden>Download PDF</button>
+          <button id="btn-publish" class="contrast" hidden>Publish Web CV</button>
+        </div>
+      </div>
+
+      <div class="builder-grid">
+        <!-- FORM -->
+        <aside class="form-panel">
+          <form id="cv-form">
+            <!-- Theme selector -->
+            <fieldset id="theme-section">
+              <legend>Theme</legend>
+              <div class="theme-grid" id="theme-grid"></div>
+              <div id="theme-customize" hidden>
+                <p class="customize-label">Customize colors</p>
+                <div class="color-grid">
+                  <label class="color-field">Accent
+                    <input type="color" id="color-accent" value="#0ea5e9" />
+                  </label>
+                  <label class="color-field">Header / BG
+                    <input type="color" id="color-header" value="#0f172a" />
+                  </label>
+                  <label class="color-field">Text
+                    <input type="color" id="color-text" value="#0f172a" />
+                  </label>
+                  <label class="color-field">Muted
+                    <input type="color" id="color-muted" value="#64748b" />
+                  </label>
+                  <label class="color-field">Skill BG
+                    <input type="color" id="color-skill" value="#e0f2fe" />
+                  </label>
+                  <label class="color-field">Card BG
+                    <input type="color" id="color-card" value="#f8fafc" />
+                  </label>
+                </div>
+                <button type="button" id="btn-reset-colors" class="outline secondary" style="margin-top:0.5rem;width:auto;font-size:0.8rem">Reset to theme defaults</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Personal</legend>
+              <label>Full Name <input type="text" name="fullName" required placeholder="Jane Doe" /></label>
+              <label>Job Title <input type="text" name="jobTitle" placeholder="Product Designer" /></label>
+              <label>Email <input type="email" name="email" required placeholder="jane@example.com" /></label>
+              <label>Phone <input type="tel" name="phone" placeholder="+1 234 567 890" /></label>
+              <label>Location <input type="text" name="location" placeholder="Jakarta, Indonesia" /></label>
+              <label>Website / Portfolio <input type="url" name="website" placeholder="https://janedoe.com" /></label>
+              <label>LinkedIn <input type="url" name="linkedin" placeholder="https://linkedin.com/in/janedoe" /></label>
+              <label>Summary
+                <textarea name="summary" rows="4" placeholder="Short professional summary..."></textarea>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Experience</legend>
+              <div id="experience-list"></div>
+              <button type="button" id="add-experience" class="outline">+ Add Experience</button>
+            </fieldset>
+
+            <fieldset>
+              <legend>Education</legend>
+              <div id="education-list"></div>
+              <button type="button" id="add-education" class="outline">+ Add Education</button>
+            </fieldset>
+
+            <fieldset id="projects-section">
+              <legend>Projects <small style="opacity:0.7">(Web portfolio)</small></legend>
+              <div id="projects-list"></div>
+              <button type="button" id="add-project" class="outline">+ Add Project</button>
+            </fieldset>
+
+            <fieldset>
+              <legend>Skills</legend>
+              <label>Skills (comma separated)
+                <input type="text" name="skills" placeholder="JavaScript, Figma, Leadership, ..." />
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Languages</legend>
+              <label>Languages (comma separated)
+                <input type="text" name="languages" placeholder="English (Native), Indonesian (Fluent)" />
+              </label>
+            </fieldset>
+          </form>
+        </aside>
+
+        <!-- LIVE PREVIEW -->
+        <div class="preview-panel">
+          <div id="cv-preview" class="cv-paper theme-classic">
+            <!-- filled by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLISH RESULT (Web only) -->
+    <section id="publish-view" hidden>
+      <article>
+        <h2>Your Web CV is live!</h2>
+        <p>Link is valid for <strong>30 days</strong>. After that it will be automatically deleted.</p>
+        <p><a id="public-link" href="#" target="_blank" rel="noopener"></a></p>
+        <div class="grid">
+          <button id="btn-copy-link" class="contrast">Copy Link</button>
+          <button id="btn-new-cv" class="secondary">Create Another</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>Data for Web CVs is stored in Firebase and automatically purged after 30 days. ATS & Designed CVs are generated locally as PDF — nothing is saved on the server.</small>
+  </footer>
+
+  <!-- Templates for dynamic items -->
+  <template id="exp-template">
+    <div class="repeatable">
+      <label>Job Title <input type="text" name="expTitle" placeholder="Senior Designer" /></label>
+      <label>Company <input type="text" name="expCompany" placeholder="Acme Inc." /></label>
+      <div class="grid">
+        <label>Start <input type="month" name="expStart" /></label>
+        <label>End <input type="month" name="expEnd" /></label>
+      </div>
+      <label>Description <textarea name="expDesc" rows="3" placeholder="Key achievements..."></textarea></label>
+      <button type="button" class="remove-btn outline secondary">Remove</button>
+    </div>
+  </template>
+
+  <template id="edu-template">
+    <div class="repeatable">
+      <label>Degree <input type="text" name="eduDegree" placeholder="B.Sc. Computer Science" /></label>
+      <label>School <input type="text" name="eduSchool" placeholder="University of Example" /></label>
+      <div class="grid">
+        <label>Start <input type="month" name="eduStart" /></label>
+        <label>End <input type="month" name="eduEnd" /></label>
+      </div>
+      <button type="button" class="remove-btn outline secondary">Remove</button>
+    </div>
+  </template>
+
+  <!-- Firebase + App scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore-compat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/theme-helpers.js"></script>
+  <script src="themes/classic/render.js"></script>
+  <script src="themes/modern/render.js"></script>
+  <script src="themes/elegant/render.js"></script>
+  <script src="themes/creative/render.js"></script>
+  <script src="themes/minimal/render.js"></script>
+  <script src="themes/designed-frame/render.js"></script>
+  <script src="themes/web-office/render.js"></script>
+  <script src="themes/web-pro/render.js"></script>
+  <script src="themes/web-designer/render.js"></script>
+  <script src="themes/web-artist/render.js"></script>
+  <script src="themes/web-programmer/render.js"></script>
+  <script src="themes/web-doctor/render.js"></script>
+  <script src="themes/web-teacher/render.js"></script>
+  <script src="themes/designed-timeline/render.js"></script>
+  <script src="themes/designed-bold/render.js"></script>
+  <script src="themes/ats-banded/render.js"></script>
+  <script src="themes/ats-serif/render.js"></script>
+  <script src="themes/ats-compact/render.js"></script>
+  <script src="js/portfolio-fx.js"></script>
+  <script src="js/app.js"></script>
+
+  <template id="proj-template">
+    <div class="repeatable">
+      <label>Project name <input type="text" name="projName" placeholder="My Awesome App" /></label>
+      <label>Tagline / role <input type="text" name="projRole" placeholder="Full-stack · 2024" /></label>
+      <label>Link <input type="url" name="projUrl" placeholder="https://..." /></label>
+      <label>Tech (comma separated) <input type="text" name="projTech" placeholder="React, Node, Firebase" /></label>
+      <label>Description <textarea name="projDesc" rows="3" placeholder="What you built and impact..."></textarea></label>
+      <button type="button" class="remove-btn outline secondary">Remove</button>
+    </div>
+  </template>
+
+</body>
+</html>

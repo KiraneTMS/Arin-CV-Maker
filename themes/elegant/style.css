@@ -1,0 +1,108 @@
+/* =========================================================
+   3. ELEGANT – centered, serif, lots of whitespace
+   ========================================================= */
+.theme-elegant {
+  --accent: #4a3728;
+  --text: #2c241b;
+  --muted: #8b7355;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.theme-elegant .cv-header {
+  text-align: center;
+  padding: 2.5rem 2.5rem 1.5rem;
+}
+
+.theme-elegant .cv-header h1 {
+  margin: 0 0 0.3rem;
+  font-size: 2.1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.theme-elegant .cv-header .title {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+
+.theme-elegant .cv-header .contact {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 1.2rem;
+}
+
+.theme-elegant .cv-header .divider {
+  width: 60px;
+  height: 1px;
+  background: var(--accent);
+  margin: 1.25rem auto 0;
+}
+
+.theme-elegant .cv-body {
+  padding: 0.5rem 2.75rem 2.5rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.theme-elegant .cv-section {
+  margin-top: 1.6rem;
+  text-align: center;
+}
+
+.theme-elegant .cv-section h2 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.9rem;
+}
+
+.theme-elegant .cv-item {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.theme-elegant .cv-item h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.theme-elegant .cv-item .meta {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0.2rem 0 0.4rem;
+}
+
+.theme-elegant .cv-item p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.theme-elegant .skills-list,
+.theme-elegant .lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.theme-elegant .skill-tag,
+.theme-elegant .lang-tag {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  background: transparent;
+}
+

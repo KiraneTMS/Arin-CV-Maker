@@ -1,0 +1,180 @@
+/* =========================================================
+   WEB-CARDS – bento / card portfolio page
+   ========================================================= */
+.theme-web-cards {
+  --accent: #f43f5e;
+  --accent-dark: #e11d48;
+  --text: #1c1917;
+  --muted: #78716c;
+  --skill-bg: #ffe4e6;
+  --card-bg: #ffffff;
+  --card-border: #e7e5e4;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f5f5f4 !important;
+}
+
+.theme-web-cards .layout-web-cards {
+  background: #f5f5f4;
+  padding: 1.5rem;
+}
+
+.theme-web-cards .wc-bento {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 0.85rem;
+}
+
+.theme-web-cards .wc-card {
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--card-border, #e7e5e4);
+  border-radius: 16px;
+  padding: 1.25rem 1.35rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.theme-web-cards .wc-hero {
+  position: relative;
+  overflow: hidden;
+
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--header-bg, #1c1917) 0%, color-mix(in srgb, var(--header-bg, #1c1917) 70%, var(--accent)) 100%);
+  color: #fff;
+  border: none;
+  padding: 2rem 1.75rem;
+}
+
+.theme-web-cards .wc-hero h1 {
+  margin: 0 0 0.3rem;
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.theme-web-cards .wc-hero .wc-role {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  color: color-mix(in srgb, #fff 80%, var(--accent));
+  font-weight: 500;
+}
+
+.theme-web-cards .wc-hero .wc-contact {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.85);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
+.theme-web-cards .wc-hero .wc-contact a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.theme-web-cards .wc-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.theme-web-cards .wc-about {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #44403c;
+}
+
+.theme-web-cards .wc-item {
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--card-border, #e7e5e4);
+}
+
+.theme-web-cards .wc-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.theme-web-cards .wc-item h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.theme-web-cards .wc-meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0.12rem 0 0.3rem;
+}
+
+.theme-web-cards .wc-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #57534e;
+  line-height: 1.45;
+}
+
+.theme-web-cards .skills-list,
+.theme-web-cards .lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.theme-web-cards .skill-tag,
+.theme-web-cards .lang-tag {
+  background: var(--skill-bg);
+  color: var(--accent-dark, var(--accent));
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+@media (max-width: 560px) {
+  .theme-web-cards .wc-bento {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Projects grid (Web portfolio) */
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+.proj-card {
+  background: var(--card-bg, #f8fafc);
+  border: 1px solid color-mix(in srgb, var(--accent, #6366f1) 25%, transparent);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  border-left: 3px solid var(--accent, #6366f1);
+}
+.proj-card h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text, #0f172a);
+}
+.proj-role {
+  font-size: 0.82rem;
+  color: var(--muted, #64748b);
+  margin: 0.2rem 0 0.4rem;
+}
+.proj-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.5;
+}

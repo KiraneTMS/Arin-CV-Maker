@@ -1,0 +1,55 @@
+
+.theme-ats-banded {
+  --accent: #1e3a5f;
+  --text: #1e293b;
+  --muted: #64748b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.theme-ats-banded .cv-header {
+  padding: 1.5rem 2rem;
+  background: var(--header-bg, #1e3a5f);
+  color: #fff;
+}
+.theme-ats-banded .cv-header h1 {
+  margin: 0 0 0.15rem;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #fff;
+}
+.theme-ats-banded .cv-header .title {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 0.4rem;
+  color: #fff;
+}
+.theme-ats-banded .cv-header .contact {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  color: #fff;
+}
+.theme-ats-banded .cv-header .contact a { color: #fff; }
+.theme-ats-banded .cv-body { padding: 1.1rem 2rem 1.75rem; }
+.theme-ats-banded .cv-section { margin-top: 1.1rem; }
+.theme-ats-banded .cv-section h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: var(--accent, #1e3a5f);
+  border-bottom: 2px solid var(--accent, #1e3a5f);
+  padding-bottom: 0.2rem;
+}
+.theme-ats-banded .cv-item { margin-bottom: 0.85rem; }
+.theme-ats-banded .cv-item h3 { margin: 0; font-size: 0.98rem; font-weight: 700; }
+.theme-ats-banded .cv-item .meta { font-size: 0.82rem; color: var(--muted); margin: 0.1rem 0 0.3rem; }
+.theme-ats-banded .cv-item p { margin: 0; font-size: 0.88rem; }
+.theme-ats-banded .skills-list, .theme-ats-banded .lang-list {
+  display: flex; flex-wrap: wrap; gap: 0.35rem;
+}
+.theme-ats-banded .skill-tag, .theme-ats-banded .lang-tag {
+  background: var(--skill-bg, #e2e8f0); padding: 0.18rem 0.5rem; border-radius: 3px; font-size: 0.8rem;
+}
