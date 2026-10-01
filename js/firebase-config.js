@@ -11,18 +11,19 @@
  */
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
+    apiKey: "AIzaSyBhvOa6ZIZVrWnIO6SKngYRYkX8iUKPmNk",
+    authDomain: "arin-cv-maker.firebaseapp.com",
+    projectId: "arin-cv-maker",
+    storageBucket: "arin-cv-maker.firebasestorage.app",
+    messagingSenderId: "746549928528",
+    appId: "1:746549928528:web:d13e9699714a12194a6755",
+    measurementId: "G-30T39SQPC8"
+  };
 
 // Initialize only if real keys are present
 let db = null;
 try {
-  if (firebaseConfig.apiKey && firebaseConfig.apiKey !== "YOUR_API_KEY") {
+  if (firebaseConfig.apiKey && firebaseConfig.apiKey !== "AIzaSyBhvOa6ZIZVrWnIO6SKngYRYkX8iUKPmNk") {
     firebase.initializeApp(firebaseConfig);
     db = firebase.firestore();
   }
